@@ -170,4 +170,4 @@ Start with [the documentation index](docs/README.md). Important references inclu
 
 ## License
 
-No license file is currently included. Add one before redistributing the project publicly.
+This project is available under the [MIT License](LICENSE).
