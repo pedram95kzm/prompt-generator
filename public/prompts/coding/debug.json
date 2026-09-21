@@ -1,0 +1,29 @@
+{
+  "problem": {
+    "required": true,
+    "label": "Problem",
+    "type": "textarea",
+    "description": "Describe what is going wrong and when it happens.",
+    "placeholder": "The save button stops responding after…"
+  },
+  "code": {
+    "required": true,
+    "label": "Code or error output",
+    "type": "textarea",
+    "description": "Paste the smallest relevant snippet or stack trace.",
+    "placeholder": "Paste code, logs, or the error message…"
+  },
+  "expected_behavior": {
+    "required": true,
+    "label": "Expected behavior",
+    "type": "text",
+    "placeholder": "What should happen instead?"
+  },
+  "additional_context": {
+    "required": false,
+    "label": "Additional context",
+    "type": "textarea",
+    "description": "Environment, recent changes, or attempts you have made.",
+    "placeholder": "Optional context…"
+  }
+}

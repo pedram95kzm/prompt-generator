@@ -1,0 +1,16 @@
+{
+  "focus_areas": {
+    "required": false,
+    "label": "Goals or focus areas",
+    "type": "textarea",
+    "description": "Direct the audit toward the outcomes that matter most.",
+    "placeholder": "Optional: simplify architecture, improve security, reduce latency…"
+  },
+  "constraints": {
+    "required": false,
+    "label": "Constraints or risk tolerance",
+    "type": "textarea",
+    "description": "State compatibility, scope, dependency, timeline, or change-risk limits.",
+    "placeholder": "Optional: preserve public APIs, avoid new dependencies, low-risk changes only…"
+  }
+}

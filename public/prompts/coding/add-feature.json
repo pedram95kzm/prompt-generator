@@ -1,0 +1,23 @@
+{
+  "feature": {
+    "required": true,
+    "label": "Feature request",
+    "type": "textarea",
+    "description": "Explain the user-facing outcome you want.",
+    "placeholder": "Users should be able to…"
+  },
+  "technical_context": {
+    "required": false,
+    "label": "Technical context",
+    "type": "textarea",
+    "description": "Mention the stack, relevant files, or known constraints.",
+    "placeholder": "Optional repository or architecture context…"
+  },
+  "acceptance_criteria": {
+    "required": false,
+    "label": "Acceptance criteria",
+    "type": "textarea",
+    "description": "List observable conditions for completion.",
+    "placeholder": "Optional: It is done when…"
+  }
+}

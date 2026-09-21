@@ -1,0 +1,26 @@
+{
+  "room": {
+    "required": true,
+    "label": "Room",
+    "type": "text",
+    "placeholder": "Kitchen, bedroom, hallway…"
+  },
+  "activities": {
+    "required": true,
+    "label": "Activities",
+    "type": "textarea",
+    "placeholder": "Cooking, reading, video calls, entertaining…"
+  },
+  "natural_light": {
+    "required": true,
+    "label": "Natural light and existing fixtures",
+    "type": "textarea",
+    "placeholder": "Window direction, daylight level, current fixtures…"
+  },
+  "constraints": {
+    "required": false,
+    "label": "Constraints",
+    "type": "textarea",
+    "placeholder": "Optional budget, rental rules, wiring limits…"
+  }
+}

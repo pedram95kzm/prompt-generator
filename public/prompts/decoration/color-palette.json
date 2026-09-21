@@ -1,0 +1,26 @@
+{
+  "space": {
+    "required": true,
+    "label": "Space",
+    "type": "text",
+    "placeholder": "North-facing bedroom, open-plan living area…"
+  },
+  "mood": {
+    "required": true,
+    "label": "Desired mood",
+    "type": "textarea",
+    "placeholder": "Calm and airy, dramatic and intimate…"
+  },
+  "existing_colors": {
+    "required": false,
+    "label": "Existing colors and finishes",
+    "type": "textarea",
+    "placeholder": "Optional flooring, furniture, stone, or fabrics…"
+  },
+  "constraints": {
+    "required": false,
+    "label": "Constraints",
+    "type": "textarea",
+    "placeholder": "Optional colors to avoid, rental limits, low light…"
+  }
+}

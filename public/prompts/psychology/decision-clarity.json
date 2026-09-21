@@ -1,0 +1,26 @@
+{
+  "decision": {
+    "required": true,
+    "label": "Decision",
+    "type": "textarea",
+    "placeholder": "I need to decide whether to…"
+  },
+  "options": {
+    "required": true,
+    "label": "Options",
+    "type": "textarea",
+    "placeholder": "Option A…\nOption B…"
+  },
+  "priorities": {
+    "required": true,
+    "label": "Priorities and values",
+    "type": "textarea",
+    "placeholder": "What matters most in this decision?"
+  },
+  "constraints": {
+    "required": false,
+    "label": "Constraints or deadlines",
+    "type": "textarea",
+    "placeholder": "Optional limits, obligations, or timing…"
+  }
+}

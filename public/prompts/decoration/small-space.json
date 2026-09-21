@@ -1,0 +1,26 @@
+{
+  "space": {
+    "required": true,
+    "label": "Space and purpose",
+    "type": "textarea",
+    "placeholder": "A studio that needs sleeping, working, and dining zones…"
+  },
+  "dimensions": {
+    "required": true,
+    "label": "Dimensions and fixed features",
+    "type": "textarea",
+    "placeholder": "Measurements, doors, windows, radiators, outlets…"
+  },
+  "storage_needs": {
+    "required": true,
+    "label": "Storage and functional needs",
+    "type": "textarea",
+    "placeholder": "Clothing, books, two workstations…"
+  },
+  "style": {
+    "required": false,
+    "label": "Preferred style",
+    "type": "text",
+    "placeholder": "Optional: Scandinavian, eclectic, contemporary…"
+  }
+}

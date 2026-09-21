@@ -1,0 +1,38 @@
+{
+  "room_type": {
+    "required": true,
+    "label": "Room",
+    "type": "text",
+    "placeholder": "Living room, bedroom, home office…"
+  },
+  "dimensions": {
+    "required": true,
+    "label": "Approximate dimensions",
+    "type": "text",
+    "placeholder": "4 × 5 m, ceiling 2.8 m"
+  },
+  "current_style": {
+    "required": true,
+    "label": "Current condition",
+    "type": "textarea",
+    "placeholder": "Describe the existing room, furniture, and finishes…"
+  },
+  "desired_style": {
+    "required": true,
+    "label": "Desired style and feeling",
+    "type": "textarea",
+    "placeholder": "Warm minimal, relaxed, natural textures…"
+  },
+  "budget": {
+    "required": true,
+    "label": "Budget",
+    "type": "text",
+    "placeholder": "$1,500 or low / medium / flexible"
+  },
+  "keep_items": {
+    "required": false,
+    "label": "Items that must stay",
+    "type": "textarea",
+    "placeholder": "Optional furniture, art, or finishes to retain…"
+  }
+}

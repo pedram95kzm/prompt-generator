@@ -1,0 +1,173 @@
+# Prompt Studio
+
+Prompt Studio is a guided prompt builder for creating detailed, reusable AI prompts. Pick a template, answer a focused set of questions, choose a response language, and copy the finished prompt into any AI tool.
+
+The application runs entirely in the browser. It does not call an AI API, require an account, or send form values to an application backend.
+
+## Highlights
+
+- 13 curated templates for software engineering, structured reflection, and interior design
+- High-quality instructions with explicit roles, guardrails, workflows, and output contracts
+- Dynamic forms generated from adjacent JSON schemas
+- Required-field validation and automatic removal of unused optional lines
+- English, Persian, Arabic, Spanish, French, and German response instructions
+- RTL-aware output for Persian and Arabic
+- Template search, dark mode, keyboard shortcuts, clipboard copy, and responsive layouts
+- Browser-local persistence for selections, theme, language, and per-template inputs
+
+## Quick start
+
+Requirements:
+
+- Node.js 20.19+ or 22.12+
+- npm
+- Internet access at runtime for Tailwind CSS and Google Fonts
+
+```bash
+npm install
+npm run dev
+```
+
+Open the URL printed by Vite, usually <http://localhost:5173>.
+
+## How it works
+
+1. `src/data/catalog.ts` registers every category and template.
+2. The browser loads a template’s Markdown and adjacent JSON schema from `public/prompts/`.
+3. `src/utils/loader.ts` verifies that schema keys match the template placeholders.
+4. `src/main.ts` renders the form and stores inputs in `localStorage`.
+5. `src/utils/generator.ts` validates required values, replaces placeholders, removes empty optional lines, and appends the response-language instruction.
+6. The generated text is previewed as plain text and can be copied to the clipboard.
+
+Prompt Studio performs deterministic text generation only. The resulting prompt is intended to be pasted into a separate AI product.
+
+## Template catalog
+
+| Category | Templates |
+| --- | --- |
+| Coding | Debug an issue, Add a feature, Generate tests, Audit and refactor a codebase, Generate project documentation |
+| Psychology | Reframe a thought, Find decision clarity, Build a habit, Prepare a difficult conversation |
+| Decoration | Plan a room makeover, Create a color palette, Optimize a small space, Design a lighting plan |
+
+The psychology templates provide general reflection and communication exercises. They are not a substitute for diagnosis, treatment, crisis support, or professional care.
+
+## Commands
+
+| Command | Purpose |
+| --- | --- |
+| `npm run dev` | Start the Vite development server |
+| `npm run typecheck` | Run strict TypeScript checks |
+| `npm run build` | Type-check and create the production bundle in `dist/` |
+| `npm run preview` | Serve the production bundle locally |
+
+There is currently no configured test runner, linter, or formatter.
+
+## Project structure
+
+```text
+public/
+  prompts/
+    coding/          Markdown templates and JSON schemas
+    psychology/
+    decoration/
+src/
+  data/catalog.ts    Category and template registry
+  types/index.ts     Shared TypeScript contracts
+  utils/generator.ts Validation and prompt construction
+  utils/loader.ts    Asset loading, schema checks, and caching
+  utils/parser.ts    Placeholder extraction and key comparison
+  main.ts            UI, state, rendering, and event handling
+  style.css          Custom styles layered over Tailwind
+docs/                 Product and engineering documentation
+index.html            Application shell and Tailwind configuration
+```
+
+## Template format
+
+Each prompt is a Markdown file containing double-brace placeholders:
+
+```text
+## Issue
+
+{{problem}}
+
+Additional context: {{additional_context}}
+```
+
+Each placeholder must have a matching key in the adjacent JSON schema. The reserved `language` placeholder is the only exception.
+
+Optional placeholders should normally remain on their own line. When an optional value is empty, Prompt Studio removes the entire source line containing that placeholder.
+
+## Schema format
+
+```json
+{
+  "problem": {
+    "required": true,
+    "label": "Problem",
+    "type": "textarea",
+    "description": "Describe what is going wrong and when it happens.",
+    "placeholder": "The save button stops responding after…"
+  },
+  "additional_context": {
+    "required": false,
+    "label": "Additional context",
+    "type": "textarea"
+  }
+}
+```
+
+Supported field types are `text` and `textarea`. Schema property order determines form-field order.
+
+## Add or edit a template
+
+1. Add or update `public/prompts/<category>/<template-id>.md`.
+2. Add or update the same-name `.json` schema.
+3. Ensure every non-`language` placeholder has exactly one schema entry and every schema entry appears in the Markdown.
+4. Register new templates in `src/data/catalog.ts`.
+5. If the total changes, update the header count in `src/main.ts`.
+6. Run:
+
+```bash
+npm run typecheck
+npm run build
+```
+
+Strong templates in this project should:
+
+- define the expert role and desired outcome;
+- distinguish required inputs from optional context;
+- ask questions only when missing information is genuinely blocking;
+- include domain-specific safety and accuracy guardrails;
+- define a practical method without requesting hidden reasoning;
+- specify the expected deliverable or response structure;
+- prohibit fabricated facts, verification results, prices, or certainty.
+
+## Production build
+
+```bash
+npm ci
+npm run build
+```
+
+Deploy the generated `dist/` directory to a static host at the origin root. The current catalog uses root-absolute `/prompts/...` asset paths. HTTPS is recommended for transport integrity and clipboard behavior.
+
+## Privacy and storage
+
+Prompt content is generated locally, but entered values are automatically stored unencrypted in browser `localStorage` under `prompt-studio-state-v1`. Reset clears only the active template. Avoid entering sensitive information on a shared browser or device.
+
+Tailwind CSS and Google Fonts are loaded from third-party CDNs at runtime; those providers receive ordinary web-request metadata, not prompt form values.
+
+## Documentation
+
+Start with [the documentation index](docs/README.md). Important references include:
+
+- [Architecture](docs/05-architecture.md)
+- [Technical design](docs/06-technical-design.md)
+- [Security and privacy](docs/09-security.md)
+- [Developer guide](docs/14-developer-guide.md)
+- [User guide](docs/15-user-guide.md)
+
+## License
+
+No license file is currently included. Add one before redistributing the project publicly.

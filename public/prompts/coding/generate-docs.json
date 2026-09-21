@@ -1,0 +1,23 @@
+{
+  "audience": {
+    "required": false,
+    "label": "Primary audience",
+    "type": "text",
+    "description": "Who should the documentation serve first?",
+    "placeholder": "Optional: maintainers, contributors, operators, end users…"
+  },
+  "scope": {
+    "required": false,
+    "label": "Priority scope",
+    "type": "textarea",
+    "description": "Highlight areas that need the most attention.",
+    "placeholder": "Optional: onboarding, architecture, deployment, API reference…"
+  },
+  "requirements": {
+    "required": false,
+    "label": "Standards or deliverables",
+    "type": "textarea",
+    "description": "Mention a required format, directory, style guide, or document set.",
+    "placeholder": "Optional documentation requirements…"
+  }
+}

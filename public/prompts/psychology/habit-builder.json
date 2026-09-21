@@ -1,0 +1,26 @@
+{
+  "habit": {
+    "required": true,
+    "label": "Habit",
+    "type": "text",
+    "placeholder": "Read more, walk daily, practice a language…"
+  },
+  "motivation": {
+    "required": true,
+    "label": "Why it matters",
+    "type": "textarea",
+    "placeholder": "This matters to me because…"
+  },
+  "available_time": {
+    "required": true,
+    "label": "Realistic time and energy",
+    "type": "text",
+    "placeholder": "10 minutes on weekday mornings"
+  },
+  "obstacles": {
+    "required": false,
+    "label": "Likely obstacles",
+    "type": "textarea",
+    "placeholder": "Optional: travel, fatigue, an irregular schedule…"
+  }
+}

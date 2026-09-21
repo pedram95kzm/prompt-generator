@@ -1,0 +1,27 @@
+{
+  "situation": {
+    "required": true,
+    "label": "Situation",
+    "type": "textarea",
+    "description": "Briefly describe what happened, as concretely as possible.",
+    "placeholder": "During the meeting…"
+  },
+  "automatic_thought": {
+    "required": true,
+    "label": "Automatic thought",
+    "type": "textarea",
+    "placeholder": "The first thought that showed up was…"
+  },
+  "emotions": {
+    "required": true,
+    "label": "Emotions and intensity",
+    "type": "text",
+    "placeholder": "Anxious 7/10, disappointed 5/10"
+  },
+  "evidence": {
+    "required": false,
+    "label": "Evidence or context",
+    "type": "textarea",
+    "placeholder": "Optional facts that seem relevant…"
+  }
+}

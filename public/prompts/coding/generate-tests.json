@@ -1,0 +1,22 @@
+{
+  "code": {
+    "required": true,
+    "label": "Code under test",
+    "type": "textarea",
+    "placeholder": "Paste the function, module, or component…"
+  },
+  "test_framework": {
+    "required": true,
+    "label": "Test framework",
+    "type": "text",
+    "description": "For example: Vitest, Jest, pytest, or PHPUnit.",
+    "placeholder": "Vitest"
+  },
+  "scenarios": {
+    "required": false,
+    "label": "Important scenarios",
+    "type": "textarea",
+    "description": "Call out regressions, edge cases, or behavior that matters most.",
+    "placeholder": "Optional scenarios to prioritize…"
+  }
+}

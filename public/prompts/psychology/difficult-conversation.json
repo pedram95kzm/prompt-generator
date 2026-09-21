@@ -1,0 +1,26 @@
+{
+  "relationship": {
+    "required": true,
+    "label": "Relationship",
+    "type": "text",
+    "placeholder": "Coworker, partner, friend, family member…"
+  },
+  "situation": {
+    "required": true,
+    "label": "What happened",
+    "type": "textarea",
+    "placeholder": "Describe the situation without personal details…"
+  },
+  "desired_outcome": {
+    "required": true,
+    "label": "Desired outcome",
+    "type": "textarea",
+    "placeholder": "After the conversation, I hope…"
+  },
+  "boundaries": {
+    "required": false,
+    "label": "Boundaries or sensitivities",
+    "type": "textarea",
+    "placeholder": "Optional boundaries, safety concerns, or topics to avoid…"
+  }
+}
