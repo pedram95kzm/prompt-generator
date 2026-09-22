@@ -1,7 +1,7 @@
 # Architecture
 
 Status: **Observed architecture**  
-Last verified: **2026-09-19**
+Last verified: **2026-09-22**
 
 ## Architectural style
 
@@ -132,6 +132,5 @@ The repository does not identify a hosting provider, environment topology, CI pi
 - Template cache keys use template ID alone. IDs are unique today, but a future duplicate ID in another category would collide.
 - Absolute `/prompts/...` paths assume root hosting and do not automatically honor a non-root Vite base path.
 - Tailwind is generated in the browser from a CDN script rather than included in the Vite build.
-- The header's `13 templates` label is hard-coded separately from the catalog.
 - Stored state and JSON schema data are cast to TypeScript types without runtime structural validation.
 - Template/configuration strings are sometimes inserted with `innerHTML`; current assets are trusted, but the design is not safe for arbitrary untrusted template metadata.

@@ -1,7 +1,7 @@
 # User guide
 
 Status: **Current**  
-Last verified: **2026-09-19**
+Last verified: **2026-09-22**
 
 ## What Prompt Studio does
 
@@ -9,7 +9,7 @@ Prompt Studio helps you assemble a detailed prompt for another AI tool. It does 
 
 ## Create a prompt
 
-1. Choose **Coding**, **Psychology**, or **Decoration**.
+1. Choose a category from the current catalog.
 2. Select a template card.
 3. Fill every field marked with `*`. Optional fields may be left blank.
 4. Choose a response language.

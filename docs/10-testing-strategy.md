@@ -1,7 +1,7 @@
 # Testing and validation
 
 Status: **Current-state assessment**  
-Last verified: **2026-09-19**
+Last verified: **2026-09-22**
 
 ## Current state
 
@@ -17,7 +17,7 @@ npm run build
 - `typecheck` runs TypeScript strict checks without output.
 - `build` repeats the type check and then creates a production Vite build.
 
-During the 2026-09-19 documentation audit, both commands passed after the `.md` conversion, and all 13 Markdown/schema pairs were checked for matching placeholder keys. That catalog-pair check is not committed as a reusable script.
+During the documentation audit, both commands passed after the `.md` conversion, and every registered Markdown/schema pair was checked for matching placeholder keys. That catalog-pair check is not committed as a reusable script.
 
 ## Coverage
 

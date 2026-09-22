@@ -1,12 +1,12 @@
 # Glossary
 
 Status: **Current**  
-Last verified: **2026-09-19**
+Last verified: **2026-09-22**
 
 | Term | Meaning in this project |
 | --- | --- |
 | Prompt Studio | The complete browser application. |
-| Category | A catalog grouping: Coding, Psychology, or Decoration. |
+| Category | A catalog grouping used to organize related templates. |
 | Template | A registered guided-prompt workflow with display metadata and two runtime asset paths. |
 | Prompt asset | A `.md` file under `public/prompts/` containing literal text and `{{key}}` tokens. It is not rendered as Markdown. |
 | Schema | The adjacent `.json` map describing form fields for a prompt asset. |

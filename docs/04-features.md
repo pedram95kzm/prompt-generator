@@ -1,7 +1,7 @@
 # Feature reference
 
 Status: **Current**  
-Last verified: **2026-09-19**
+Last verified: **2026-09-22**
 
 ## 1. Category and template selection
 
@@ -103,8 +103,4 @@ Last verified: **2026-09-19**
 
 ## Catalog contents
 
-| Category | Templates |
-| --- | --- |
-| Coding | Debug an issue; Add a feature; Generate tests; Refactor code; Generate docs |
-| Psychology | Reframe a thought; Find decision clarity; Build a habit; Prepare a conversation |
-| Decoration | Plan a room makeover; Create a color palette; Optimize a small space; Design a lighting plan |
+`src/data/catalog.ts` is the authoritative catalog. The Cinema collection provides separate movie and series recommendation workflows. Each asks for favorites plus optional taste, exclusion, mood, constraint, commitment, and availability context, then generates a prompt for accurate, title-specific comparisons.

@@ -1,7 +1,7 @@
 # AI agent context
 
 Status: **Current continuation guide**  
-Last verified: **2026-09-19**
+Last verified: **2026-09-22**
 
 ## Read this first
 
@@ -41,7 +41,7 @@ src/utils/generator.ts → plain generated prompt → preview/clipboard
 | `src/utils/parser.ts` | Defines legal placeholder syntax and schema parity. |
 | `src/utils/loader.ts` | Defines fetch/error/cache behavior; cache key is template ID only. |
 | `src/types/index.ts` | Shared contracts; runtime JSON is still only cast, not structurally validated. |
-| `public/prompts/` | 13 `.md` prompt assets and 13 adjacent `.json` schemas across 3 categories. |
+| `public/prompts/` | Runtime `.md` prompt assets and adjacent `.json` schemas organized by category. |
 | `index.html` | Tailwind CDN dependency and inline visual theme configuration. |
 | `src/style.css` | Custom CSS and Google Fonts dependency. |
 
@@ -76,7 +76,6 @@ src/utils/generator.ts → plain generated prompt → preview/clipboard
 - No automated tests or CI.
 - Runtime Tailwind JavaScript has page privileges; no SRI/CSP is configured.
 - Static asset and stored-state shapes lack runtime structural validation.
-- Hard-coded `13 templates` label can drift.
 - Absolute prompt paths break ordinary subpath hosting.
 - `main.ts` is the concentrated UI/state coupling point.
 
@@ -84,7 +83,7 @@ src/utils/generator.ts → plain generated prompt → preview/clipboard
 
 1. Inspect affected code and matching prompt/schema assets.
 2. Preserve current behavior unless change is explicitly requested.
-3. For a new prompt, update both assets, catalog, unique ID, and header total.
+3. For a new prompt, update both assets and the catalog, and use a globally unique ID.
 4. Run `npm run typecheck` and `npm run build`.
 5. Manually verify required/optional behavior, persistence, RTL if relevant, copy, responsive layout, and dark mode.
 6. Update root README and affected `docs/` files.

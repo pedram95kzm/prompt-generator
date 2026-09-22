@@ -1,7 +1,7 @@
 # Reconstructed product requirements document
 
 Status: **Current-state reconstruction**  
-Last verified: **2026-09-19**
+Last verified: **2026-09-22**
 
 ## Product summary
 
@@ -24,6 +24,7 @@ Success metrics and business KPIs are **UNKNOWN**; no analytics exists in the re
 | Developer | Structure a request for debugging, implementation, testing, refactoring, or docs | Coding |
 | Reflective user | Organize thoughts, decisions, habits, or a difficult conversation | Psychology |
 | Home planner | Explore room, palette, space, or lighting decisions | Decoration |
+| Film and television viewer | Find tailored movie or series recommendations with explicit comparisons | Cinema |
 | Template maintainer | Add or update curated prompt workflows safely | `public/prompts/`, `src/data/catalog.ts` |
 
 Personas are inferred from template content; no formal user research is stored.
@@ -89,4 +90,3 @@ The repository contains no explicit prioritization record. The following classif
 - Sensitive user content can remain in `localStorage` with no global clear option.
 - Users may interpret psychology prompt output as professional guidance; the app provides no global disclaimer.
 - Dependence on third-party CDNs can materially affect appearance or availability.
-- The UI's `13 templates` header label can become inaccurate as the catalog changes.

@@ -1,13 +1,13 @@
 # Current requirements
 
 Status: **Reconstructed from implementation**  
-Last verified: **2026-09-19**
+Last verified: **2026-09-22**
 
 ## Functional requirements
 
 | ID | Current requirement | Evidence |
 | --- | --- | --- |
-| FR-01 | Show Coding, Psychology, and Decoration categories. | `src/data/catalog.ts`, `src/main.ts` |
+| FR-01 | Show the categories and templates registered in the catalog. | `src/data/catalog.ts`, `src/main.ts` |
 | FR-02 | Show templates for the active category and visually mark the active template. | `renderCategories()`, `renderTemplates()` in `src/main.ts` |
 | FR-03 | Filter the active category's templates by title, description, or tag. | `filteredTemplates()` in `src/main.ts` |
 | FR-04 | Load a template Markdown file and JSON schema from same-origin public assets. | `src/utils/loader.ts` |
@@ -79,8 +79,7 @@ Last verified: **2026-09-19**
 
 ## Known limitations
 
-- Search is scoped to the current category rather than all 13 templates.
-- The category/template count displayed in the header is hard-coded as `13 templates`.
+- Search is scoped to the current category rather than the entire catalog.
 - Categories, templates, languages, icons, and colors are source-code configuration, not runtime configuration.
 - Interface text is English; selecting Persian or Arabic only changes the generated prompt's direction and final language instruction.
 - Generated output is cleared when the user changes templates or languages and is not persisted.

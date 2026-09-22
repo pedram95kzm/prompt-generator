@@ -1,7 +1,7 @@
 # Developer guide
 
 Status: **Current**  
-Last verified: **2026-09-19**
+Last verified: **2026-09-22**
 
 ## Start contributing
 
@@ -68,8 +68,7 @@ tsconfig*.json             Strict TypeScript configuration
 4. Use only `text` or `textarea` field types.
 5. Put empty-optional tokens on lines that may be removed in full.
 6. Register the template in `src/data/catalog.ts` with title, description, tags, and `...prompt(category, id)`.
-7. Update the hard-coded header template count in `src/main.ts` if the total changes.
-8. Validate required/optional generation and run the build.
+7. Validate required/optional generation and run the build.
 
 Example schema entry:
 

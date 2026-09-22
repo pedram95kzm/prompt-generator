@@ -1,7 +1,7 @@
 # Build and deployment
 
 Status: **Verified build behavior; hosting process unknown**  
-Last verified: **2026-09-19**
+Last verified: **2026-09-22**
 
 ## Environments present in the repository
 
@@ -29,7 +29,7 @@ npm run build
 1. `tsc -p tsconfig.app.json --noEmit`
 2. `vite build`
 
-Output is written to `dist/`. Vite copies all files under `public/`, including 13 `.md` templates and 13 `.json` schemas, into `dist/prompts/`.
+Output is written to `dist/`. Vite copies the prompt Markdown and JSON schema assets under `public/` into `dist/prompts/`.
 
 ## Hosting requirements
 

@@ -124,4 +124,27 @@ export const categories: Category[] = [
       },
     ],
   },
+  {
+    id: 'cinema',
+    title: 'Cinema',
+    description: 'Find your next film or series',
+    icon: 'film',
+    color: 'rose',
+    templates: [
+      {
+        id: 'movie-recommender',
+        title: 'Find movies you\'ll love',
+        description: 'Compare your favorites with thoughtful film picks.',
+        tags: ['Movies', 'Recommendations', 'Comparison'],
+        ...prompt('cinema', 'movie-recommender'),
+      },
+      {
+        id: 'series-recommender',
+        title: 'Find your next series',
+        description: 'Match favorite shows to accurate, tailored picks.',
+        tags: ['Series', 'TV', 'Streaming', 'Recommendations'],
+        ...prompt('cinema', 'series-recommender'),
+      },
+    ],
+  },
 ];

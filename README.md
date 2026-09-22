@@ -6,7 +6,7 @@ The application runs entirely in the browser. It does not call an AI API, requir
 
 ## Highlights
 
-- 13 curated templates for software engineering, structured reflection, and interior design
+- Curated templates for software engineering, structured reflection, interior design, and cinema recommendations
 - High-quality instructions with explicit roles, guardrails, workflows, and output contracts
 - Dynamic forms generated from adjacent JSON schemas
 - Required-field validation and automatic removal of unused optional lines
@@ -43,11 +43,7 @@ Prompt Studio performs deterministic text generation only. The resulting prompt 
 
 ## Template catalog
 
-| Category | Templates |
-| --- | --- |
-| Coding | Debug an issue, Add a feature, Generate tests, Audit and refactor a codebase, Generate project documentation |
-| Psychology | Reframe a thought, Find decision clarity, Build a habit, Prepare a difficult conversation |
-| Decoration | Plan a room makeover, Create a color palette, Optimize a small space, Design a lighting plan |
+The catalog is maintained in `src/data/catalog.ts` and displayed in the app. It includes guided workflows for coding, psychology, decoration, and cinema, with dedicated cinema recommenders for movies and series.
 
 The psychology templates provide general reflection and communication exercises. They are not a substitute for diagnosis, treatment, crisis support, or professional care.
 
@@ -67,9 +63,7 @@ There is currently no configured test runner, linter, or formatter.
 ```text
 public/
   prompts/
-    coding/          Markdown templates and JSON schemas
-    psychology/
-    decoration/
+    <category>/      Markdown templates and JSON schemas
 src/
   data/catalog.ts    Category and template registry
   types/index.ts     Shared TypeScript contracts
@@ -125,8 +119,7 @@ Supported field types are `text` and `textarea`. Schema property order determine
 2. Add or update the same-name `.json` schema.
 3. Ensure every non-`language` placeholder has exactly one schema entry and every schema entry appears in the Markdown.
 4. Register new templates in `src/data/catalog.ts`.
-5. If the total changes, update the header count in `src/main.ts`.
-6. Run:
+5. Run:
 
 ```bash
 npm run typecheck

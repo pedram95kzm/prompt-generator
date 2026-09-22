@@ -24,6 +24,7 @@ const icons = {
   code: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m8 9-3 3 3 3m8-6 3 3-3 3m-2-9-4 12"/></svg>',
   mind: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M9.5 4.5A3.5 3.5 0 0 0 6 8v.3A3.6 3.6 0 0 0 4 11.5c0 1.2.6 2.3 1.5 3A3.5 3.5 0 0 0 9 19h1V5.5a2 2 0 0 0-.5-1Zm5 0A3.5 3.5 0 0 1 18 8v.3a3.6 3.6 0 0 1 2 3.2c0 1.2-.6 2.3-1.5 3A3.5 3.5 0 0 1 15 19h-1V5.5a2 2 0 0 1 .5-1Z"/><path d="M6 8.5h2m8 0h2M5.5 14H8m8 0h2.5"/></svg>',
   home: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m3 11 9-8 9 8"/><path d="M5 10v10h14V10M9 20v-6h6v6"/></svg>',
+  film: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 5v14M17 5v14M3 9h4m10 0h4M3 15h4m10 0h4"/></svg>',
   check: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="m6 12 4 4 8-8"/></svg>',
   arrow: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>',
   copy: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="8" y="8" width="11" height="11" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg>',
@@ -118,7 +119,6 @@ app.innerHTML = `
         </label>
 
         <div class="ml-auto flex items-center gap-2 md:ml-0">
-          <span class="hidden rounded-full border border-[#dfe5dd] bg-white/70 px-3 py-1.5 text-[11px] font-semibold text-[#69746c] sm:inline-flex dark:border-[#354039] dark:bg-[#18201b] dark:text-[#a6b2aa]">13 templates</span>
           <button id="theme-toggle" type="button" class="grid h-10 w-10 place-items-center rounded-xl border border-[#dfe5dd] bg-white/75 text-[#667169] transition hover:border-[#c6d0c8] hover:bg-white dark:border-[#354039] dark:bg-[#18201b] dark:text-[#b8c4bc] dark:hover:bg-[#202a23]" aria-label="Switch to dark mode"></button>
         </div>
       </div>
@@ -149,12 +149,11 @@ app.innerHTML = `
 
         <section class="min-w-0 space-y-5" aria-label="Prompt builder">
           <div class="surface rounded-2xl p-4 sm:p-5">
-            <div class="mb-4 flex items-end justify-between gap-3">
+            <div class="mb-4">
               <div>
                 <p class="mb-1 text-[10px] font-bold uppercase tracking-[0.17em] text-moss-600 dark:text-[#6dbc8d]">01 · Choose a starting point</p>
                 <h1 id="template-heading" class="text-xl font-bold tracking-[-0.025em] sm:text-2xl">Coding templates</h1>
               </div>
-              <span id="template-count" class="shrink-0 text-xs font-medium text-[#859087] dark:text-[#89968d]"></span>
             </div>
             <div id="template-list" class="grid gap-2.5 sm:grid-cols-2"></div>
           </div>
@@ -202,7 +201,6 @@ app.innerHTML = `
 const elements = {
   categoryList: mustFind<HTMLElement>('#category-list'),
   templateHeading: mustFind<HTMLElement>('#template-heading'),
-  templateCount: mustFind<HTMLElement>('#template-count'),
   templateList: mustFind<HTMLElement>('#template-list'),
   form: mustFind<HTMLFormElement>('#prompt-form'),
   formTitle: mustFind<HTMLElement>('#form-title'),
@@ -226,6 +224,9 @@ function colorClasses(category: Category): { icon: string; active: string } {
   if (category.color === 'amber') {
     return { icon: 'bg-[#fff1d7] text-[#a56919] dark:bg-[#3c2d18] dark:text-[#e8b767]', active: 'bg-[#fff6e5] dark:bg-[#332818]' };
   }
+  if (category.color === 'rose') {
+    return { icon: 'bg-[#fbecef] text-[#ad4f67] dark:bg-[#452832] dark:text-[#e796aa]', active: 'bg-[#fdf1f3] dark:bg-[#382129]' };
+  }
   return { icon: 'bg-[#e9f1fb] text-[#3f6fa7] dark:bg-[#243547] dark:text-[#86b3e4]', active: 'bg-[#edf4fb] dark:bg-[#202e3b]' };
 }
 
@@ -248,7 +249,7 @@ function renderCategories(): void {
       <span class="grid h-9 w-9 shrink-0 place-items-center rounded-lg ${colors.icon}"><span class="h-[18px] w-[18px]">${icons[category.icon]}</span></span>
       <span class="min-w-0 flex-1">
         <span class="block text-[13px] font-semibold">${category.title}</span>
-        <span class="block truncate text-[10px] text-[#8a958d] dark:text-[#87948b]">${category.templates.length} templates</span>
+        <span class="block truncate text-[10px] text-[#8a958d] dark:text-[#87948b]">${category.description}</span>
       </span>
       <span class="h-1.5 w-1.5 shrink-0 rounded-full ${selected ? 'bg-moss-500' : 'bg-transparent'}"></span>
     `;
@@ -268,7 +269,6 @@ function filteredTemplates(): Template[] {
 function renderTemplates(): void {
   const templates = filteredTemplates();
   elements.templateHeading.textContent = `${state.category.title} templates`;
-  elements.templateCount.textContent = `${templates.length} of ${state.category.templates.length}`;
   elements.templateList.replaceChildren();
 
   if (!templates.length) {

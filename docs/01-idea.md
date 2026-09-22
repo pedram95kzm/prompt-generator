@@ -1,7 +1,7 @@
 # Idea and product overview
 
 Status: **Current-state reconstruction**  
-Last verified: **2026-09-19**
+Last verified: **2026-09-22**
 
 ## Project
 
@@ -19,6 +19,7 @@ Users often know the outcome they want from an AI assistant but omit context, co
 - Software developers seeking debugging, feature, testing, refactoring, or documentation prompts.
 - People seeking structured reflection, decision, habit, or communication prompts.
 - People planning interior-decoration, color, layout, or lighting work.
+- Viewers seeking movie or series recommendations grounded in their existing tastes.
 - Template authors who maintain the catalog, Markdown prompt files, and JSON schemas.
 
 No accounts, organizations, roles, or paid tiers exist in the implementation.
@@ -33,7 +34,7 @@ No accounts, organizations, roles, or paid tiers exist in the implementation.
 
 ## High-level solution
 
-1. The user selects one of three categories and one of 13 templates.
+1. The user selects a category and template from the current catalog.
 2. The browser fetches the template's `.md` content and adjacent `.json` schema.
 3. The app renders text or textarea fields from the schema.
 4. The user supplies values and selects a response language.
@@ -50,8 +51,7 @@ No accounts, organizations, roles, or paid tiers exist in the implementation.
 
 ## Current scope
 
-- Three hard-coded categories: Coding, Psychology, Decoration.
-- Thirteen statically registered templates.
+- Source-registered categories and templates for the supported guided workflows.
 - `text` and `textarea` field types.
 - Browser-local generation, state persistence, preview, and copying.
 - Responsive light/dark interface with limited RTL behavior for generated Persian and Arabic output.

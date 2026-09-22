@@ -16,7 +16,7 @@ This register documents decisions evident in the repository. It does not claim t
 | D-007 | Persist selections and all template inputs in browser `localStorage`. | `StoredState`, `readStoredState()`, `persist()`. | Unknown. | Convenient resume behavior without backend; privacy, quota, and same-origin script risks. | Active; see ADR-003. |
 | D-008 | Load templates lazily and cache them in memory by template ID. | `src/utils/loader.ts`. | Unknown. | Avoids repeat page-session fetches; IDs must remain globally unique to avoid collisions. | Active. |
 | D-009 | Load Tailwind CSS from its browser CDN and fonts from Google Fonts. | `index.html`, `src/style.css`. | Root README says Tailwind CDN was requested; broader historical reasoning unknown. | Fast setup; runtime availability, privacy, CSP, and supply-chain dependencies. | Active. |
-| D-010 | Keep the catalog and language list as compiled source configuration. | `src/data/catalog.ts`, `src/main.ts`. | Unknown. | Simple and typed; content addition requires source edit/build and some duplicate counts/config. | Active. |
+| D-010 | Keep the catalog and language list as compiled source configuration. | `src/data/catalog.ts`, `src/main.ts`. | Unknown. | Simple and typed; content addition requires a source edit and build. | Active. |
 | D-011 | Use no database, API, authentication, or application backend. | Complete repository audit. | Unknown; consistent with local deterministic generation. | No shared state or server operations; no sync, accounts, history, or AI execution. | Active. |
 
 ## Decision authority and approval

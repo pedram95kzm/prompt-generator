@@ -1,0 +1,65 @@
+{
+  "liked_series": {
+    "required": true,
+    "label": "Series you like",
+    "type": "textarea",
+    "description": "List several favorites. Include the year or country when a title could be ambiguous.",
+    "placeholder": "Severance, Fleabag, Dark, The Bear…"
+  },
+  "liked_elements": {
+    "required": false,
+    "label": "What you liked about them",
+    "type": "textarea",
+    "description": "Mention the qualities that mattered; different favorites can have different reasons.",
+    "placeholder": "Severance's mystery and visual control, Fleabag's voice and brevity…"
+  },
+  "excluded_series": {
+    "required": false,
+    "label": "Series to exclude",
+    "type": "textarea",
+    "description": "Add shows you disliked, dropped, already watched, or do not want repeated.",
+    "placeholder": "Already watched Succession; could not get into…"
+  },
+  "mood_and_genres": {
+    "required": false,
+    "label": "Mood, themes, or genres",
+    "type": "textarea",
+    "description": "Describe the viewing experience or subject matter you want now.",
+    "placeholder": "Character-driven mystery with some dark humor…"
+  },
+  "format_preferences": {
+    "required": false,
+    "label": "Format preferences",
+    "type": "text",
+    "description": "Say whether live action, animation, anime, documentary, anthology, or limited series matter.",
+    "placeholder": "Live action or animation; limited series welcome"
+  },
+  "commitment": {
+    "required": false,
+    "label": "Viewing commitment",
+    "type": "textarea",
+    "description": "Note episode length, number of seasons, pacing, finished/ongoing status, or release-schedule preferences.",
+    "placeholder": "Prefer completed stories and episodes under an hour…"
+  },
+  "constraints": {
+    "required": false,
+    "label": "Limits or deal-breakers",
+    "type": "textarea",
+    "description": "Include content sensitivities, accessibility needs, or other boundaries.",
+    "placeholder": "No graphic gore; avoid unresolved cancellation cliffhangers…"
+  },
+  "availability": {
+    "required": false,
+    "label": "Region and access",
+    "type": "text",
+    "description": "Availability changes often, so include your country and services only if it matters.",
+    "placeholder": "Germany; Netflix, Apple TV+, or rental"
+  },
+  "recommendation_count": {
+    "required": false,
+    "label": "Shortlist size",
+    "type": "text",
+    "description": "Say how many recommendations you want, or leave blank for a compact shortlist.",
+    "placeholder": "6"
+  }
+}

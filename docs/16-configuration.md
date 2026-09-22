@@ -1,7 +1,7 @@
 # Configuration reference
 
 Status: **Current**  
-Last verified: **2026-09-19**
+Last verified: **2026-09-22**
 
 ## Environment variables and secrets
 
@@ -20,7 +20,7 @@ Last verified: **2026-09-19**
 | `tsconfig.app.json` | Application build type-check | Extends base; excludes `src/**/*.test.ts` |
 | `index.html` | Runtime shell and Tailwind config | Tailwind 3.4.17 URL, dark mode class, theme colors/fonts/shadows |
 | `src/data/catalog.ts` | Product catalog | Categories, template metadata/tags, asset paths |
-| `src/main.ts` | UI/runtime defaults | Languages, RTL set, localStorage key, default selection behavior, hard-coded template count |
+| `src/main.ts` | UI/runtime defaults | Languages, RTL set, localStorage key, and default selection behavior |
 | `src/style.css` | Visual behavior | Google Fonts URL, field/surface/dark/motion styles |
 | `.gitignore` | Generated/private file exclusions | `node_modules`, `dist`, local files, coverage |
 

@@ -1,0 +1,58 @@
+{
+  "liked_movies": {
+    "required": true,
+    "label": "Movies you like",
+    "type": "textarea",
+    "description": "List several favorites. Include the year or filmmaker when a title could be ambiguous.",
+    "placeholder": "Arrival (2016), Parasite (2019), Mad Max: Fury Road…"
+  },
+  "liked_elements": {
+    "required": false,
+    "label": "What you liked about them",
+    "type": "textarea",
+    "description": "Mention the qualities that mattered; different favorites can have different reasons.",
+    "placeholder": "The thoughtful science fiction in Arrival, Parasite's tonal shifts…"
+  },
+  "excluded_movies": {
+    "required": false,
+    "label": "Movies to exclude",
+    "type": "textarea",
+    "description": "Add disliked titles, movies already watched, or anything you do not want repeated.",
+    "placeholder": "Already watched most Christopher Nolan films; avoid…"
+  },
+  "mood": {
+    "required": false,
+    "label": "Mood or occasion",
+    "type": "text",
+    "description": "Describe what kind of viewing experience you want right now.",
+    "placeholder": "A tense weekend movie that still has emotional depth"
+  },
+  "preferences": {
+    "required": false,
+    "label": "Creative preferences",
+    "type": "textarea",
+    "description": "Include genres, themes, countries, languages, eras, or styles you want to favor or explore.",
+    "placeholder": "Open to subtitles; interested in modern Korean thrillers…"
+  },
+  "constraints": {
+    "required": false,
+    "label": "Limits or deal-breakers",
+    "type": "textarea",
+    "description": "Note runtime, pace, content sensitivities, accessibility needs, or other boundaries.",
+    "placeholder": "Under two hours; no graphic violence; avoid very slow pacing…"
+  },
+  "availability": {
+    "required": false,
+    "label": "Region and access",
+    "type": "text",
+    "description": "Availability changes often, so include your country and services only if it matters.",
+    "placeholder": "Canada; Netflix, Criterion Channel, or rental"
+  },
+  "recommendation_count": {
+    "required": false,
+    "label": "Shortlist size",
+    "type": "text",
+    "description": "Say how many recommendations you want, or leave blank for a compact shortlist.",
+    "placeholder": "8"
+  }
+}
